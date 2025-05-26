@@ -116,11 +116,12 @@
           </div>
         </div>
       </div>
-
       <!-- Navigation Bar -->
 
       <div id="navbar-container" class="w-full">
-        <nav class="border-gray-200 bg-[#14a0b3] dark:border-gray-700 z-50">
+        <nav
+          class="border-gray-200 bg-[#14a0b3] dark:border-gray-700 relative z-[1]"
+        >
           <div
             class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
           >
@@ -164,7 +165,7 @@
                   </a>
                   <!-- Dropdown menu -->
                   <div
-                    class="dropdown-hover-menu z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-white dark:divide-gray-600"
+                    class="dropdown-hover-menu z-[1] font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-white dark:divide-gray-600"
                   >
                     <ul
                       class="py-2 text-sm text-white dark:text-gray-400"
@@ -231,7 +232,7 @@
             <button class="hidden md:flex">
               <a
                 href="#"
-                class="inline-flex items-center py-3 px-6 text-sm font-medium text-center bg-[#d4b81e] rounded-3xl hover:bg-[#181c21] hover:text-white"
+                class="inline-flex items-center py-3 px-6 text-sm font-medium text-center bg-[#f5ba18] rounded-3xl hover:bg-[#181c21] hover:text-white"
               >
                 Contact Us
               </a>
@@ -560,6 +561,138 @@
           <i class="fa-regular fa-circle-right text-sm"></i>
         </button>
       </section>
+
+      <section>
+        <!-- Modal toggle -->
+        <button
+          data-modal-target="authentication-modal"
+          data-modal-toggle="authentication-modal"
+          class="block text-white bg-[#18a6de] cursor-pointer font-medium text-lg rounded-full px-[19px] py-[13px] text-center fixed top-[50%] right-4 z-[100]"
+          type="button"
+        >
+          <i class="fa-regular fa-comment"></i>
+        </button>
+        <!-- Main modal -->
+        <div
+          id="authentication-modal"
+          tabindex="-1"
+          aria-hidden="true"
+          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 bottom-0 z-[9999] justify-center items-center w-full md:inset-0 max-h-full bg-black bg-opacity-50"
+        >
+          <div class="relative p-4 w-full max-w-md max-h-full">
+            <!-- Modal content -->
+            <div
+              class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700"
+            >
+              <!-- Modal header -->
+              <div
+                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200"
+              >
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                  Contact Us
+                </h3>
+                <button
+                  type="button"
+                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  data-modal-hide="authentication-modal"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-4 md:p-5">
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">
+                  Please fill out the form below and we will get back to you as
+                  soon as possible.
+                </p>
+                <form class="space-y-4" action="#">
+                  <div>
+                    <label
+                      for="name"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Full Name</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Email Address</label
+                    >
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="name@company.com"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="phone"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="Enter your phone number"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      >Message</label
+                    >
+                    <textarea
+                      name="message"
+                      id="message"
+                      rows="4"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      placeholder="Please describe your inquiry or requirements..."
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full text-white bg-[#18a6de] hover:bg-[#14a0b3] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300"
+                  >
+                    Submit Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- footer -->
@@ -569,6 +702,11 @@
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-10 border-b border-gray-700"
       >
         <div>
+          <img
+            src="https://www.grupsautomation.co.in/images/logo.png"
+            alt="company-logo"
+            sizes="30px"
+          />
           <p class="text-sm text-[#6e7778]">
             Address: Plot No. 10, Sector II, Vasai Taluka Ind. Estate, Gaurai
             Pada, Near Mumbai Vasai (E), Palghar - 401 208, Maharashtra, India.
