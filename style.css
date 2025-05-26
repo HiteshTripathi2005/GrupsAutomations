@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Additional styles for enhanced sticky navbar */
+nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced dropdown menu styles */
+.dropdown-hover-container {
+  position: relative;
+}
+
+.dropdown-hover-container:hover .dropdown-hover-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-hover-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+/* Mobile menu enhancements */
+@media (max-width: 767px) {
+  .dropdown-hover-container:hover .dropdown-hover-menu {
+    display: none;
+  }
+
+  .dropdown-hover-container.show .dropdown-hover-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #navbar-dropdown:not(.hidden) {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+}
+
+/* Mobile menu button styles */
+#mobile-menu-button {
+  position: relative;
+  z-index: 1050;
+  transition: all 0.3s ease;
+}
+
+#mobile-menu-button svg {
+  transition: all 0.3s ease;
+}
+
+.menu-icon,
+.close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Add animation for icon transitions */
+.menu-icon.hidden,
+.close-icon.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* When menu is open, we want to style the button differently */
+#mobile-menu-button[aria-expanded="true"] {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile navbar dropdown enhancement */
+@media (max-width: 767px) {
+  #navbar-dropdown:not(.hidden) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Make the mobile menu more visually appealing */
+  #navbar-dropdown ul {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  /* Improve spacing between mobile menu items */
+  #navbar-dropdown li:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Contact button styling */
+.contact-button {
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 991px) {
+  .top-nav-container {
+    height: 150px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .left-nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+  .top-nav-container p {
+    margin-left: 0;
+  }
+  .translation-icon,
+  .social-icons {
+    width: 100%;
+    justify-content: center;
+  }
+  .social-icons {
+    gap: 10px;
+  }
+}
+
+.carousel-item img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Add this style to ensure dropdown appears above the slider */
+#dropdownNavbar {
+  z-index: 100 !important;
+}
+
+/* Add this to ensure the entire navigation has proper stacking */
+nav {
+  position: relative;
+  z-index: 100;
+  transition: all 0.3s ease;
+} /* Styles for sticky navbar */
+nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+} /* Dropdown menu hover style */
+.dropdown-hover-container {
+  position: relative;
+}
+
+.dropdown-hover-container:hover .dropdown-hover-menu {
+  display: block;
+}
+
+.dropdown-hover-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+/* Responsive slider styles */
+#controls-carousel {
+  margin-bottom: 20px;
+}
+@media (max-width: 640px) {
+  #controls-carousel button[data-carousel-prev] span,
+  #controls-carousel button[data-carousel-next] span {
+    width: 30px;
+    height: 30px;
+  }
+
+  #controls-carousel button[data-carousel-prev] svg,
+  #controls-carousel button[data-carousel-next] svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* On mobile, we need click behavior */
+  .dropdown-hover-container:hover .dropdown-hover-menu {
+    display: none;
+  }
+
+  .dropdown-hover-container.show .dropdown-hover-menu {
+    display: block;
+  }
+}
